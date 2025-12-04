@@ -1,0 +1,387 @@
+/* FULL UPDATED CSS FOR DIGITAL POSTCARD MAKER */
+
+:root {
+  --accent: #ff56c8;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --dark-bg: #050505;
+  --radius: 20px;
+  --card-w: 820px;
+  --card-h: 430px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+  background: radial-gradient(900px 500px at 50% 0%, rgba(151,85,255,0.35), transparent 40%),
+    linear-gradient(#0a0a0c, #050505 70%);
+  color: #fff;
+  padding: 40px 16px 140px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+header h1 {
+  font-size: 48px;
+  background: linear-gradient(90deg, #e3b2ff, #ccaaff);
+  background-clip: text;
+  color: transparent;
+}
+.subtitle {
+  color: #cdbef0;
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 44px;
+}
+
+/* GLASS PANEL */
+.panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 26px;
+  padding: 26px;
+  box-shadow: 0 20px 50px rgba(52, 41, 41, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.panel-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* FORM FIELDS */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.field-label {
+  color: #e8d7ff;
+  font-weight: 600;
+}
+.field-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+option{
+  color:rgb(0, 0, 0);
+  background-color: rgb(240, 240, 240);
+}
+
+#fontTo{
+   border-radius: 10px;
+   width: 10rem;
+   background-color: #333333;
+   height: 2.5rem;
+}
+
+#toInput{
+  height: 3.5rem;
+  background-color: #161616;
+  border-radius: 10px;
+}
+
+#fontMessage{
+   border-radius: 10px;
+   width: 10rem;
+   background-color: #333333;
+   height: 2.5rem;
+}
+
+#messageInput{
+  height: 8rem;
+  border-radius: 10px;
+  background-color: #161616;
+}
+
+#fontFrom{
+   border-radius: 10px;
+   width: 10rem;
+   background-color: #333333;
+   height: 2.5rem;
+}
+
+#fromInput{
+  height: 3.5rem;
+  border-radius: 10px;
+  background-color: #161616;
+}
+
+/* INPUTS */
+.top-select,
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1ebeb;
+  font-size: 15px;
+}
+textarea {
+  height: 110px;
+  resize: vertical;
+}
+
+/* STYLE BUTTONS */
+.btns {
+  display: flex;
+  gap: 12px;
+}
+.btn {
+  padding: 10px 26px;
+  margin-top: 0.8rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #eee;
+  font-weight: 400;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+.btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.btn.active {
+  background: var(--accent);
+  box-shadow: 0 8px 28px rgba(255, 86, 200, 0.32);
+  color: #fff;
+}
+
+/* COLOR SWATCHES */
+.swatches {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+.swatch {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: 0.25s ease;
+}
+.swatch:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.55);
+  transform: scale(1.12);
+}
+.swatch.selected {
+  outline: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.75);
+  transform: scale(1.14);
+}
+
+/* DOWNLOAD BUTTON */
+.download {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--accent);
+  border: none;
+  border-radius: 22px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.25s ease;
+  box-shadow: 0 12px 40px rgba(255, 86, 200, 0.35);
+}
+.download:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 48px rgba(255, 86, 200, 0.45);
+}
+
+/* PREVIEW SIDE */
+.preview-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-wrap {
+  width: var(--card-w);
+  height: var(--card-h);
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 20px;
+  padding: 34px;
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 36px;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* TEXT INSIDE CARD */
+.to {
+  font-size: 40px;
+  color: #222;
+}
+.message {
+  font-size: 20px;
+  text-align: center;
+  padding: 12px 16px;
+  color: #333;
+}
+.from {
+  font-size: 18px;
+  color: #444;
+  align-self: flex-end;
+}
+
+
+/* MINIMAL */
+.card.minimal {
+  background: linear-gradient(135deg, #fff5fb, #ffe9e9);
+  border: 8px solid #fff;
+}
+.stamp {
+  position: absolute;
+  top: 24px;
+  right: 26px;
+  display: none;
+}
+
+/* SCRAPBOOK */
+.card.scrap {
+  background: #c7f4dc;
+  border: 10px solid #fff;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+}
+.card.scrap .message {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 8px;
+}
+
+/* SCRAPBOOK TAPE */
+.tape {
+  position: absolute;
+  top: 18px;
+  width: 96px;
+  opacity: 0.92;
+  display: none;
+}
+#tape-top-left { left: 22px; transform: rotate(-8deg); }
+#tape-top-right { right: 22px; transform: rotate(6deg); }
+
+/* SCRAP STAMP */
+.stamp-small {
+  position: absolute;
+  bottom: 28px;
+  right: 26px;
+  opacity: 0.85;
+  display: none;
+}
+
+/* CUTE MODE COMPLETE */
+.card.cute {
+  background: #ffe1f1;
+  border: 8px solid #fff;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 10px 30px rgba(255, 130, 200, 0.28);
+}
+.cute-icons {
+  position: absolute;
+  left: 26px;
+  top: 26px;
+  display: none;
+}
+
+/* Extra cute stickers */
+#cute-sticker-1 {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  opacity: 0.95;
+  display: none;
+}
+#cute-sticker-2 {
+  position: absolute;
+  top: 140px;
+  left: 80px;
+  opacity: 0.95;
+  display: none;
+}
+
+/* CUTE CARD DOODLES */
+.card.cute::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  width: 42px;
+  height: 42px;
+  background: url('https://i.imgur.com/0y7F7Uh.png') center/contain no-repeat;
+  opacity: 0.95;
+}
+.card.cute::after {
+  content: "";
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  width: 40px;
+  height: 40px;
+  background: url('https://i.imgur.com/o7S9TzF.png') center/contain no-repeat;
+  opacity: 0.95;
+}
+
+/* HINT TEXT */
+.hint {
+  margin-top: 18px;
+  color: #7b6f89;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .main { grid-template-columns: 1fr; }
+  .card-wrap {
+    width: 100%;
+    height: 360px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 34px; }
+  .panel { padding: 18px; }
+  .card-wrap { height: 260px; }
+  .to { font-size: 30px; }
+  textarea { height: 95px; }
+}
+
