@@ -18,7 +18,11 @@
 
 body {
   font-family: Montserrat, sans-serif;
-  background: radial-gradient(900px 500px at 50% 0%, rgba(151,85,255,0.35), transparent 40%),
+  background: radial-gradient(
+      900px 500px at 50% 0%,
+      rgba(151, 85, 255, 0.35),
+      transparent 40%
+    ),
     linear-gradient(#0a0a0c, #050505 70%);
   color: #fff;
   padding: 40px 16px 140px;
@@ -88,47 +92,26 @@ header h1 {
   gap: 10px;
 }
 
-option{
-  color:rgb(0, 0, 0);
+option {
+  color: rgb(0, 0, 0);
   background-color: rgb(240, 240, 240);
 }
 
-#fontTo{
-   border-radius: 10px;
-   width: 10rem;
-   background-color: #333333;
-   height: 2.5rem;
+#fontTo,
+#fontMessage,
+#fontFrom {
+  height: 2.5rem;
+  background-color: #333333;
 }
 
-#toInput{
-  height: 3.5rem;
-  background-color: #161616;
-  border-radius: 10px;
-}
-
-#fontMessage{
-   border-radius: 10px;
-   width: 10rem;
-   background-color: #333333;
-   height: 2.5rem;
-}
-
-#messageInput{
+#messageInput {
   height: 8rem;
-  border-radius: 10px;
   background-color: #161616;
 }
 
-#fontFrom{
-   border-radius: 10px;
-   width: 10rem;
-   background-color: #333333;
-   height: 2.5rem;
-}
-
-#fromInput{
+#toInput,
+#fromInput {
   height: 3.5rem;
-  border-radius: 10px;
   background-color: #161616;
 }
 
@@ -138,14 +121,10 @@ input,
 textarea {
   width: 100%;
   padding: 12px 14px;
-  
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #f1ebeb;
   font-size: 15px;
-}
-textarea {
-  height: 110px;
-  resize: vertical;
 }
 
 /* STYLE BUTTONS */
@@ -177,8 +156,8 @@ textarea {
 /* COLOR SWATCHES */
 .swatches {
   display: flex;
-  gap: 12px;
-  margin-top: 6px;
+  gap: 14px;
+  margin-top: 10px;
 }
 .swatch {
   width: 38px;
@@ -190,12 +169,12 @@ textarea {
 }
 .swatch:hover {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.55);
-  transform: scale(1.12);
+  transform: scale(1.14);
 }
 .swatch.selected {
   outline: 4px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.75);
-  transform: scale(1.14);
+  transform: scale(1.12);
 }
 
 /* DOWNLOAD BUTTON */
@@ -241,6 +220,7 @@ textarea {
   height: 100%;
   border-radius: 20px;
   padding: 36px;
+  margin-top: 4rem;
   position: relative;
   overflow: visible;
   display: flex;
@@ -249,22 +229,26 @@ textarea {
 }
 
 /* TEXT INSIDE CARD */
-.to {
+/* BASE CARD TEXT – RESTORED */
+.card .to {
   font-size: 40px;
   color: #222;
+  font-family: inherit;
 }
-.message {
+
+.card .message {
   font-size: 20px;
   text-align: center;
   padding: 12px 16px;
   color: #333;
-}
-.from {
-  font-size: 18px;
-  color: #444;
-  align-self: flex-end;
+  background: none;
+  box-shadow: none;
 }
 
+.card .from {
+  font-size: 18px;
+  color: #444;
+}
 
 /* MINIMAL */
 .card.minimal {
@@ -284,6 +268,7 @@ textarea {
   border: 10px solid #fff;
   box-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
 }
+
 .card.scrap .message {
   background: rgba(255, 255, 255, 0.85);
   border-radius: 8px;
@@ -297,8 +282,14 @@ textarea {
   opacity: 0.92;
   display: none;
 }
-#tape-top-left { left: 22px; transform: rotate(-8deg); }
-#tape-top-right { right: 22px; transform: rotate(6deg); }
+#tape-top-left {
+  left: 22px;
+  transform: rotate(-8deg);
+}
+#tape-top-right {
+  right: 22px;
+  transform: rotate(6deg);
+}
 
 /* SCRAP STAMP */
 .stamp-small {
@@ -310,56 +301,107 @@ textarea {
 }
 
 /* CUTE MODE COMPLETE */
+
+/* ---------------- CUTE MODE (FULL REDESIGN) ---------------- */
+
 .card.cute {
-  background: #ffe1f1;
-  border: 8px solid #fff;
-  position: relative;
-  overflow: visible;
-  box-shadow: 0 10px 30px rgba(255, 130, 200, 0.28);
-}
-.cute-icons {
-  position: absolute;
-  left: 26px;
-  top: 26px;
-  display: none;
+  background: linear-gradient(135deg, #ffe6f2, #fff1cc);
+  border: 10px solid #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(255, 120, 190, 0.4);
 }
 
-/* Extra cute stickers */
-#cute-sticker-1 {
-  position: absolute;
-  top: 80px;
-  right: 40px;
-  opacity: 0.95;
-  display: none;
-}
-#cute-sticker-2 {
-  position: absolute;
-  top: 140px;
-  left: 80px;
-  opacity: 0.95;
-  display: none;
-}
-
-/* CUTE CARD DOODLES */
+/* dashed inner frame */
 .card.cute::before {
   content: "";
   position: absolute;
-  top: 60px;
-  left: 40px;
-  width: 42px;
-  height: 42px;
-  background: url('https://i.imgur.com/0y7F7Uh.png') center/contain no-repeat;
-  opacity: 0.95;
+  inset: 18px;
+  border-radius: 16px;
+  border: 2px dashed rgba(255, 140, 200, 0.7);
 }
-.card.cute::after {
-  content: "";
+
+/* cute text */
+.card.cute .to {
+  font-family: "Pacifico", cursive;
+  color: #ff4fa3;
+}
+
+.card.cute .message {
+  font-family: "Quicksand", sans-serif;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.card.cute .from {
+  font-family: "Dancing Script", cursive;
+  color: #ff6fb1;
+}
+
+/* ======================================================
+   CUTE DECOR (EMOJI STICKERS)
+====================================================== */
+
+.cute-decor {
   position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: none;
+}
+
+.card.cute .cute-decor {
+  display: block;
+}
+
+.cute-decor .d {
+  position: absolute;
+  font-size: 26px;
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* positions */
+.cute-decor .star:nth-child(1) {
+  top: 20px;
+  left: 30px;
+}
+.cute-decor .star:nth-child(2) {
+  top: 40px;
+  right: 90px;
+}
+.cute-decor .heart:nth-child(3) {
   top: 120px;
-  left: 120px;
-  width: 40px;
-  height: 40px;
-  background: url('https://i.imgur.com/o7S9TzF.png') center/contain no-repeat;
-  opacity: 0.95;
+  left: 60px;
+}
+.cute-decor .heart:nth-child(4) {
+  bottom: 90px;
+  right: 100px;
+}
+.cute-decor .sparkle:nth-child(5) {
+  top: 220px;
+  left: 180px;
+}
+.cute-decor .sparkle:nth-child(6) {
+  bottom: 50px;
+  left: 130px;
+}
+.cute-decor .cloud {
+  top: 70px;
+  right: 40px;
+  font-size: 34px;
+  opacity: 0.7;
+}
+
+@keyframes floaty {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* HINT TEXT */
@@ -370,18 +412,41 @@ textarea {
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .main { grid-template-columns: 1fr; }
+  .main {
+    grid-template-columns: 1fr;
+  }
+
   .card-wrap {
-    width: 100%;
     height: 360px;
   }
 }
 
 @media (max-width: 480px) {
-  header h1 { font-size: 34px; }
-  .panel { padding: 18px; }
-  .card-wrap { height: 260px; }
-  .to { font-size: 30px; }
-  textarea { height: 95px; }
+  header h1 {
+    font-size: 34px;
+  }
+  .panel {
+    padding: 18px;
+  }
+  .card-wrap {
+    height: 260px;
+  }
+  .to {
+    font-size: 30px;
+  }
+  textarea {
+    height: 95px;
+  }
 }
 
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 34px;
+  }
+  .card-wrap {
+    height: 260px;
+  }
+  .to {
+    font-size: 30px;
+  }
+}
