@@ -1,0 +1,61 @@
+# 💌 Digital Postcard Maker
+
+Create, customize, and download beautiful digital postcards with a cute and modern UI ✨  
+This web app lets users write heartfelt messages, choose fonts, switch styles, pick backgrounds, and export their postcard as an image — all in real time.
+
+---
+
+## 🌐 Live Demo
+
+👉 **[View Live Project](https://khushi05sharma.github.io/Digital-Postcard-Maker/)**
+
+---
+
+## ✨ Features
+
+- 📝 Write personalized messages
+- ✒️ Choose different fonts for **To**, **Message**, and **From**
+- 🎨 Switch between **Solid** and **Gradient** backgrounds
+- 💖 Three postcard styles:
+  - **Minimal** – clean and elegant
+  - **Cute** – playful with stars, hearts, and sparkles
+  - **Scrapbook** – creative with tape & stamp elements
+- 🖼️ Live postcard preview
+- ⬇️ Download postcard as a PNG image
+- 📱 Fully responsive design
+
+---
+
+## 🛠️ Built With
+
+- **HTML5** – Structure and layout  
+- **CSS3** – Styling, animations, and responsiveness  
+- **JavaScript (Vanilla JS)** – Interactivity and live updates  
+- **html2canvas** – Export postcard as an image  
+
+---
+
+## 📸 Screenshots
+
+### 🎀 Cute Style
+![Cute Postcard](./assets/cute.jpeg)
+
+### 🧼 Minimal Style
+![Minimal Postcard](./assets/minimal.jpeg)
+
+### 📒 Scrapbook Style
+![Scrapbook Postcard](./assets/scrapbook.jpeg)
+
+
+---
+
+## 📂 Project Structure
+
+```text
+Digital-Postcard-Maker/
+│
+├── index.html      # Main HTML file
+├── style.css       # All styles (Minimal, Cute, Scrapbook)
+├── script.js       # App logic & interactions
+├── screenshots/    # Project screenshots
+└── README.md
